@@ -1,0 +1,100 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package petprojectg56;
+
+/**
+ *
+ * @author Ävila A F
+ */
+public class PetClass {
+    //1. definir los datos de la clase
+    private String petName;
+    private char petSex; 
+    private int age;
+    private String healthStatus;
+    private String breed;
+    private boolean pedigree;
+    private String color;
+    private String height;
+    
+    //2.construir el constructor 
+
+    public PetClass( String petName, char petSex, int age, String healthStatus, String breed, boolean pedigree, String color, String height) {
+        this.petName = petName;
+        this.petSex = petSex;
+        this.age = age;
+        this.healthStatus = healthStatus;
+        this.breed = breed;
+        this.pedigree = pedigree;
+        this.color = color;
+        this.height = height;
+        //this me permite acceder a las variables de ese constructor 
+    }
+    
+
+
+//creamos las funciones (return)-- getter de cada un ade las funciones de la clase
+    
+    public String getPetName() {
+        return petName;
+    }
+
+    public char getPetSex() {
+        return petSex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getHealthStatus() {
+        return healthStatus;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public boolean isPedigree() {
+        return pedigree;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+    
+    
+    //creamos el metodo para imprimir los valores de los atributos
+
+    public void showPetInformation() {
+        String _PetSex = "";
+        //bloque de condicion dde sexo
+        if(getPetSex() == 'm'){
+            _PetSex = "macho";
+        }else if(getPetSex()== 'f'){
+            _PetSex = "hembra";
+        }else{
+            _PetSex = "el sexo ingresado es incorrecto";
+        }
+        // bloque de condicion 2 pedigree
+        String _isPedigree = "";
+        
+        if(isPedigree()== true){
+            _isPedigree = "si tiene comida";
+        }else if(isPedigree()== false){
+        _isPedigree = "no tiene comida";
+        }else{
+       _isPedigree = "opcion invalidad";
+        }
+           
+        System.out.println(getPetName() + " es " + _PetSex + " tiene " + getAge() + " años" + " su estado es " + getHealthStatus() + " es de raza: " + getBreed() + " y " 
+                + getHeight() + " de color "+ getColor() + " tiene comida ? " + _isPedigree);
+    }
+}
